@@ -21,8 +21,10 @@
 <script src="t_js.js"></script>
 <script>
     $.get("/show_ass_from_db",function(data){
-        $("#assignmentlist").append(`
-        <p>${data}</p>`)
+        data.forEach(function(e){
+            $("#assignmentlist").append(`
+            <a href="/t_assignment_submissions">${e}</a>`)
+        })
     })
 </script>
 </body>
