@@ -14,10 +14,8 @@
 <script src="s_js.js"></script>
 <script>
     $.get("/show_ass_from_db",function(data){
-        data.forEach(function(e){
-            $("#assignmentlist_s").append(`
-            <a href="/assignment_submissions">${e}</a>`)
-        })
+        $("#assignmentlist_s").append(`
+        <p>${data}</p>`)
     })
 </script>
 </body>
