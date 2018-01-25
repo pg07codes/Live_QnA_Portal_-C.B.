@@ -1,5 +1,6 @@
 let socket=io.connect("http://localhost:8888")
 
+
 let question=$("#question")
 let a=$("#a")
 let b=$("#b")
@@ -8,6 +9,7 @@ let d=$("#d")
 let submit =$("#submit")
 let results=$("#results")
 let graph=$("#graph")
+
 
 submit.click(function(){
     socket.emit('question', {
@@ -41,7 +43,6 @@ results.click(function (){
         })(data,cb)
     })
 })
-
 
 
 

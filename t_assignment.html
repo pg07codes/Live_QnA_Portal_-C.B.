@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>t_assignment</title>
+    <script src="jquery-3.2.1.js"></script>
+    <title>t_assignments</title>
 </head>
 <body>
-<p>teeachers can view all assignmentss here</p>
+<p>teachers can view all assignmentss here</p>
+
+<div id="assignmentlist">
+
+</div>
+
+
+<input type="button" id="newassignment" value="new assignment">
+<form method="post" action="/add_ass_into_db" id="newassignmentdetails">
+    <input type="text" id="name" name="name" placeholder="name of assignment" required>
+    <input type="submit" value="add" id="add">
+</form>
+<script src="t_js.js"></script>
+<script>
+    $.get("/show_ass_from_db",function(data){
+        $("#assignmentlist").append(`
+        <p>${data}</p>`)
+    })
+</script>
 </body>
 </html>
