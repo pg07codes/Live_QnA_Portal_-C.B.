@@ -7,7 +7,16 @@
 </head>
 <body>
 <p>student can view all assignments here.</p>
+<div id="assignmentlist_s">
+
+</div>
 
 <script src="s_js.js"></script>
+<script>
+    $.get("/show_ass_from_db",function(data){
+        $("#assignmentlist_s").append(`
+        <p>${data}</p>`)
+    })
+</script>
 </body>
 </html>
