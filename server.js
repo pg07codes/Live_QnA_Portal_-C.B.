@@ -29,6 +29,8 @@ app.get("/student",(r,s)=>s.sendFile("C:\\Users\\iampr\\WebstormProjects\\FB_liv
 app.get("/results",(r,s)=>{
     s.send(answers)
 })
+app.get("/s_assignment",(r,s)=>{s.sendFile("C:\\Users\\iampr\\WebstormProjects\\FB_liveques\\s_assignment.html")})
+app.get("/t_assignment",(r,s)=>{s.sendFile("C:\\Users\\iampr\\WebstormProjects\\FB_liveques\\t_assignment.html")})
 
 
 
