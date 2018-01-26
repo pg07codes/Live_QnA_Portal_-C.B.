@@ -61,11 +61,19 @@ app.post("/add_ass_into_db",(r,s)=>{
     })
 
 })
-
+app.post("/s/newsub",(r,s)=>{
+    submissions.create({
+        ass_name: r.body.ass_name,
+        name: r.body.name,
+        url: r.body.url
+    }).then(()=>{
+        s.redirect("/s_assignment")
+    })
+})
 
 app.get("/s/:name",(r,s)=>{
     submissions.findAll({
-        where: {"ass_name": r.param.name}
+        where: {"ass_name": r.params.name}
     }).then(function(sub_info){
         s.send(sub_info)
     })

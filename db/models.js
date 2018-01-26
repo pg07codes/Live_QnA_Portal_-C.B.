@@ -24,13 +24,11 @@ const submissions = db.define('submissions', {
     },
     name: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false
     },
     url: {
         type: DataTypes.STRING,
         primaryKey:true,
-        unique:true,
         allowNull: false
     }
 })

@@ -10,17 +10,30 @@
 <div id="assignmentlist_s">
 
 </div>
-<div id="subs">
+<div class="subs">
 
 </div>
+<form class="subnew" method="post" action="/s/newsub" >
+    <input name="ass_name" id="ass_name" type="text" required>
+    <input name="name" id="name" type="text" required>
+    <input name="url" id="url" type="text" required>
+    <input type="submit" value="submit" onclick="toggler()">
+</form>
 
 <script src="s_js.js"></script>
 <script>
+    $(".subs").hide()
+    $(".subnew").hide()
+    function toggler(){
+        $(".subnew").toggle()
+    }
     function showsubs(id){
+        $(".subs").toggle()
+        $(".subnew").toggle()
+        $(".subs").empty()
         id = id.replace(/\s/g,'')
         $.get("/s/"+`${id}`,function(data){
-        $("#subs").empty()
-        $("#subs").append(`${data}`)
+            $(".subs").append(`${data}`)
         })
     }
     $.get("/show_ass_from_db",function(data){
