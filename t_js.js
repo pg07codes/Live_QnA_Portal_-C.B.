@@ -40,10 +40,11 @@ submit.click(function(){
 
 function cb(x,y,z,o){
     graph.empty()
-    graph.append(`<span>${x}%</span>
-<span>${y}%</span>
-<span>${z}%</span>
-<span>${o}%</span>`)
+    console.log()
+    graph.append(`<div style="height:30px; width: 100px; background-color: lightseagreen"><span style="font-weight: bold; color: black; margin:10px 10px; ">A</span></div>
+<div style="height:30px; width: 100px; background-color: lightsalmon"><span style="font-weight: bold; color: black; margin:10px 10px; ">B</span></div>
+<div style="height:30px; width: 100px; background-color: cornflowerblue"><span style="font-weight: bold; color: black; margin:10px 10px; ">C</span></div>
+<div style="height:30px; width: 100px; background-color: plum"><span style="font-weight: bold; color: black; margin:10px 10px; ">D</span></div>`)
 }
 
 

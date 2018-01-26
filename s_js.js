@@ -3,6 +3,7 @@ let quesfield = $("#quesfield")
 
 
 socket.on("question",function(data){
+    quesfield.empty()
     quesfield.append(`
 <p>${data.question}</p>
 <form>
