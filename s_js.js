@@ -14,10 +14,15 @@ socket.on("question",function(data){
 </form>`)
 })
 window.sbt=function(){
+    if($("input[name='answer']:checked").val() === undefined){
+        console.log("cannot submit! Select option")
+    }
+    else{
     socket.emit('answer', {
         "answer": $("input[name='answer']:checked").val()
     })
+    console.log()
     quesfield.empty()
-}
+}}
 
 
