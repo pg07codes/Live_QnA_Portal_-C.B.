@@ -1,6 +1,5 @@
 let socket=io.connect("http://localhost:8888")
 
-
 let question=$("#question")
 let a=$("#a")
 let b=$("#b")
@@ -10,15 +9,31 @@ let submit =$("#submit")
 let results=$("#results")
 let graph=$("#graph")
 
-
+function validate(){
+        let x = document.forms["liveques"]["ques"].value
+        let y=document.forms["liveques"]["optA"].value
+        let z=document.forms["liveques"]["optB"].value
+        if (x == "") {
+            alert("Question must be filled out")
+            return false
+        }
+        else if(y==""||z==""){
+            alert("Atleast two options should be filled")
+        }
+        else
+            return true
+}
 submit.click(function(){
-    socket.emit('question', {
-        "question": question.val(),
-        "a":a.val(),
-        "b":b.val(),
-        "c":c.val(),
-        "d":d.val()
-    })
+    if(validate()){
+        socket.emit('question', {
+            "question": question.val(),
+            "a":a.val(),
+            "b":b.val(),
+            "c":c.val(),
+            "d":d.val()
+        })
+    }
+
 })
 
 
@@ -45,10 +60,3 @@ results.click(function (){
         })(data,cb)
     })
 })
-
-
-
-
-
-
-

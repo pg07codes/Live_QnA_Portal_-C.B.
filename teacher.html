@@ -11,20 +11,20 @@
 </head>
 <body>
 <div class="container">
-<form class="form-group">
+<form class="form-group " name="liveques">
 <div class="row justify-content-center m-md-4">
-    <textarea id="question" class="form-control col-md-9 " placeholder="TYPE THE QUESTION HERE..." rows="5"></textarea>
+    <textarea id="question" class="form-control col-md-9 " placeholder="TYPE THE QUESTION HERE..." rows="5" name="ques"></textarea>
 </div>
 <div class="row justify-content-center">
-    <input id="a" class="form-control col-md-7" name="options" placeholder="OPTION-A" style="display: inline-block; margin:10px 50px"></div>
+    <input id="a" class="form-control col-md-7" name="optA" placeholder="OPTION-A" style="display: inline-block; margin:10px 50px"></div>
 <div class="row justify-content-center ">
-    <input id="b" class="form-control col-md-7" name="options" placeholder="OPTION-B" style="display: inline-block; margin:10px 50px"></div>
+    <input id="b" class="form-control col-md-7" name="optB" placeholder="OPTION-B" style="display: inline-block; margin:10px 50px"></div>
 <div class="row justify-content-center ">
     <input id="c" class="form-control col-md-7" name="options" placeholder="OPTION-C" style="display: inline-block; margin:10px 50px"></div>
 <div class="row justify-content-center ">
     <input id="d" class="form-control col-md-7" name="options" placeholder="OPTION-D" style="display: inline-block; margin:10px 50px"></div>
 <div class="row justify-content-center m-md-4">
-    <input value="SEND LIVE QUESTION" class="btn btn-primary col-md-3" type ="button" id="submit" style="display: inline-block;"></div>
+    <input value="SEND LIVE QUESTION" class="btn btn-primary col-md-3" type ="button" onclick="validate()" id="submit" style="display: inline-block;"></div>
 </form>
 <div class="row justify-content-center m-md-4">
 <input type="button" class="btn btn-success col-md-3" id="results" value="FETCH RESULTS" style="display: inline-block">
