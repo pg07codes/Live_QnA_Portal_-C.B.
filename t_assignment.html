@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <script src="jquery-3.2.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>t_assignments</title>
 </head>
 <body>
-<p>teachers can view all assignmentss here</p>
 
 <div id="assignmentlist">
 
 </div>
+<div class="container">
+<form class="form-group" method="post" action="/add_ass_into_db" id="newassignmentdetails">
+   <fieldset class="form-control">
+       <legend class=" form-control" style="font-size: 25px; font-weight: bold; font-family: Bahnschrift; color: gray()">ADD A NEW ASSIGNMENT HERE</legend>
+    <div ><input type="text" class="form-control" id="name" name="name" placeholder="name of assignment" required></div>
+    <div class="col-md-4 m-md-3"><input class="btn btn-primary" type="submit" value="add" class="form-control" id="add"></div>
+   </fieldset>
 
-<form method="post" action="/add_ass_into_db" id="newassignmentdetails">
-    <input type="text" id="name" name="name" placeholder="name of assignment" required>
-    <input type="submit" value="add" id="add">
 </form>
+</div>
+
 <div class="subs">
 
 </div>
@@ -27,15 +34,29 @@
         $(".subs").empty()
         id = id.replace(/\s/g,'')
         $.get("/s/"+`${id}`,function(data){
-            $(".subs").append(`${data}`)
+            if(data.length){
+                console.log(data)
+                for(i=0;i<data.length;i++){$(".subs").append(`<div class="card mt-md-4" style="width: 18rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">SUBMITTED BY: ${data[i].name}</h5>
+                            <p style="font-size: 15px; font-weight: bold; font-family: Bahnschrift; color:gray();">URL: ${data[i].url}</p>
+                          </div>
+                        </div>`)}}
+            else{
+                $(".subs").append(`<h5>No Submissions</h5>`)
+            }
+
+
         })
     }
     $.get("/show_ass_from_db",function(data){
         for(i=0;i<data.length;i++){
             $("#assignmentlist").append(`
-        <button id="${data[i]}" onclick="showsubs(id)">${data[i]}</button>`)
+        <button id="${data[i]}" class="btn btn-lg btn-success m-md-4 col-md-3" onclick="showsubs(id)">${data[i]}</button><br>`)
         }})
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.js"></script>
 </body>
 </html>
