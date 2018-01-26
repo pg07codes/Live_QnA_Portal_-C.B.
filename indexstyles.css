@@ -1,0 +1,47 @@
+body{
+    margin:0;
+    padding: 0;
+}
+#student{
+    display: inline-block;
+    background: url("stud.jpg") no-repeat;
+    background-size: 683px 637px;
+    height: 637px;
+    width:683px;
+    filter: brightness(30%);
+}
+#student:hover{
+    filter: brightness(120%);
+
+}
+#teacher{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    background: url("te.jpg") no-repeat;
+    background-size: 683px 637px ;
+    width: 683px;
+    height: 637px;
+    filter: brightness(30%);
+}
+#teacher:hover{
+    filter: brightness(120%);
+
+}
+#teacher:hover h1{
+    color: black;
+}
+#student:hover h1{
+    color: black;
+}
+h1{
+    margin:15px;
+    padding:0;
+    font-weight: lighter;
+    font-size: 100px;
+    color: white;
+    position: relative;
+    top:200px;
+    letter-spacing: -4px;
+    text-shadow: white 1px 0 10px;
+}

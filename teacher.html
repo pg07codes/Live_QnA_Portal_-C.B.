@@ -2,30 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="teacherstyles.css" rel="stylesheet">
     <script src="jquery-3.2.1.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>teacher</title>
 </head>
 <body>
-<form>
-<textarea id="question" placeholder="question here"></textarea>
-<input id="a" name="options">
-<input id="b" name="options">
-<input id="c" name="options">
-<input id="d" name="options">
-<input value="submit" type ="button" id="submit" >
+<div class="container">
+<form class="form-group">
+<div class="row justify-content-center m-md-4">
+    <textarea id="question" class="form-control col-md-9 " placeholder="TYPE THE QUESTION HERE..." rows="5"></textarea>
+</div>
+<div class="row justify-content-center">
+    <input id="a" class="form-control col-md-7" name="options" placeholder="OPTION-A" style="display: inline-block; margin:10px 50px"></div>
+<div class="row justify-content-center ">
+    <input id="b" class="form-control col-md-7" name="options" placeholder="OPTION-B" style="display: inline-block; margin:10px 50px"></div>
+<div class="row justify-content-center ">
+    <input id="c" class="form-control col-md-7" name="options" placeholder="OPTION-C" style="display: inline-block; margin:10px 50px"></div>
+<div class="row justify-content-center ">
+    <input id="d" class="form-control col-md-7" name="options" placeholder="OPTION-D" style="display: inline-block; margin:10px 50px"></div>
+<div class="row justify-content-center m-md-4">
+    <input value="SEND LIVE QUESTION" class="btn btn-primary col-md-3" type ="button" id="submit" style="display: inline-block;"></div>
 </form>
-
-<input type="button" id="results" value="fetch results">
-
+<div class="row justify-content-center m-md-4">
+<input type="button" class="btn btn-success col-md-3" id="results" value="FETCH RESULTS" style="display: inline-block">
+</div>
 <div id="graph">
 
 </div>
-
-<a href="t_assignment">assignments</a>
-
-
+<div class="row justify-content-center m-md-4">
+<a href="t_assignment"><input value="VIEW ASSIGNMENTS" type="button" class="btn btn-danger" ></a>
+</div>
+</div>
 <script src="t_js.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.js"></script>
 
 </body>
 </html>
