@@ -7,6 +7,7 @@ const sockets=require("socket.io")
 const server = http.createServer(app)
 const io=sockets(server)
 const sbmtions=require("./db/models").assignments
+const submissions=require("./db/models").submissions
 
 
 app.use(express.json())
@@ -46,6 +47,7 @@ app.get("/show_ass_from_db",(r,s)=>{
     })
 })
 app.post("/add_ass_into_db",(r,s)=>{
+    r.body.name=r.body.name.replace(/\s/g,'')
     sbmtions.create({
         name: r.body.name
     }).then(()=>{
@@ -60,5 +62,13 @@ app.post("/add_ass_into_db",(r,s)=>{
 
 })
 
+
+app.get("/s/:name",(r,s)=>{
+    submissions.findAll({
+        where: {"ass_name": r.param.name}
+    }).then(function(sub_info){
+        s.send(sub_info)
+    })
+})
 
 server.listen(8888,()=>{console.log("UP @ 8888")})

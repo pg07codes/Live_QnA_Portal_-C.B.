@@ -10,13 +10,25 @@
 <div id="assignmentlist_s">
 
 </div>
+<div id="subs">
+
+</div>
 
 <script src="s_js.js"></script>
 <script>
+    function showsubs(id){
+        id = id.replace(/\s/g,'')
+        $.get("/s/"+`${id}`,function(data){
+        $("#subs").empty()
+        $("#subs").append(`${data}`)
+        })
+    }
     $.get("/show_ass_from_db",function(data){
+        for(i=0;i<data.length;i++){
         $("#assignmentlist_s").append(`
-        <p>${data}</p>`)
-    })
+        <button id="${data[i]}" onclick="showsubs(id)">${data[i]}</button>`)
+    }})
+
 </script>
 </body>
 </html>

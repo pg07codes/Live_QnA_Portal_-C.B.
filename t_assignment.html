@@ -20,10 +20,15 @@
 </form>
 <script src="t_js.js"></script>
 <script>
+    function showsubs(id){
+        id = id.replace(/\s/g,'')
+    }
     $.get("/show_ass_from_db",function(data){
-        $("#assignmentlist").append(`
-        <p>${data}</p>`)
-    })
+        for(i=0;i<data.length;i++){
+            $("#assignmentlist").append(`
+        <button id="${data[i]}" onclick="showsubs(id)">${data[i]}</button>`)
+        }})
+
 </script>
 </body>
 </html>

@@ -24,6 +24,7 @@ submit.click(function(){
 
 
 function cb(x,y,z,o){
+    graph.empty()
     graph.append(`<span>${x}%</span>
 <span>${y}%</span>
 <span>${z}%</span>

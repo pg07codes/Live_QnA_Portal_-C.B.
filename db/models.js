@@ -19,10 +19,8 @@ const assignments = db.define('assignments', {
 })
 
 const submissions = db.define('submissions', {
-    ass_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
+    ass_name: {
+        type: DataTypes.STRING
     },
     name: {
         type: DataTypes.STRING,
@@ -31,6 +29,7 @@ const submissions = db.define('submissions', {
     },
     url: {
         type: DataTypes.STRING,
+        primaryKey:true,
         unique:true,
         allowNull: false
     }
