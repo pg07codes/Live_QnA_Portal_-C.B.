@@ -12,16 +12,23 @@
 
 </div>
 
-
-<input type="button" id="newassignment" value="new assignment">
 <form method="post" action="/add_ass_into_db" id="newassignmentdetails">
     <input type="text" id="name" name="name" placeholder="name of assignment" required>
     <input type="submit" value="add" id="add">
 </form>
+<div class="subs">
+
+</div>
 <script src="t_js.js"></script>
 <script>
+    $(".subs").hide()
     function showsubs(id){
+        $(".subs").toggle()
+        $(".subs").empty()
         id = id.replace(/\s/g,'')
+        $.get("/s/"+`${id}`,function(data){
+            $(".subs").append(`${data}`)
+        })
     }
     $.get("/show_ass_from_db",function(data){
         for(i=0;i<data.length;i++){
