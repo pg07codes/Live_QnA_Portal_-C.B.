@@ -1,0 +1,17 @@
+span{
+    margin:10px 15px;
+    font-weight: bold;
+    font-family: Bahnschrift;
+    font-size: 30px;
+}
+.spacer{
+    margin:20px;
+}
+.btnstyle{
+    border: black solid 1px;
+    transition: border 1s;
+}
+.btnstyle:hover{
+    border: #343a40 solid 6px;
+    transition: border 1s;
+}
