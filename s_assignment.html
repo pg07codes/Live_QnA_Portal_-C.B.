@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="studentstyles.css" rel="stylesheet">
+    <link href="ass_styles.css" rel="stylesheet">
     <script src="jquery-3.2.1.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>s_assignments</title>
@@ -13,20 +14,24 @@
 
 </div>
 <div class="container">
-<div class="subs">
+<div class="subs row">
 
 </div>
 </div>
 <div class="container">
-<form class="subnew form-group m-md-3" method="post" action="/s/newsub">
-    <fieldset class="form-control">
-        <legend class="form-control" style="font-size: 25px; font-weight: bold; font-family: Bahnschrift; color: gray()">SUBMIT YOUR ASSIGNMENT HERE</legend>
+<div class="row">
+    <div class="col-md-8">
+    <form class="subnew form-group" method="post" action="/s/newsub">
+    <fieldset class="form-control" style="border: black solid 4px;">
+        <legend class="form-control bg-secondary" style="font-size: 25px; font-weight: bold; border: black solid 2px; font-family: Bahnschrift; color: black">SUBMIT YOUR ASSIGNMENT HERE</legend>
     <div class="col-md-5 m-md-3"><input class="form-control" placeholder="Assignment Name(NOTE: copy exact same name as above)" name="ass_name" id="ass_name" type="text" required></div>
     <div class="col-md-5 m-md-3"><input class="form-control" placeholder="Your Name" name="name" id="name" type="text" required></div>
     <div class="col-md-5 m-md-3"><input class="form-control" placeholder="Link to assignment" name="url" id="url" type="text" required></div>
-    <div class="col-md-5 m-md-3"><input class="form-control btn btn-danger" type="submit" value="submit" onclick="toggler()"> </div>
+    <div class="col-md-5 m-md-3"><input class="form-control btn btn-dark" type="submit" value="submit" onclick="toggler()"> </div>
     </fieldset>
 </form>
+</div>
+</div>
 </div>
 
 <script src="s_js.js"></script>
@@ -43,14 +48,14 @@
         id = id.replace(/\s/g,'')
         $.get("/s/"+`${id}`,function(data){
             if(data.length){
-                for(i=0;i<data.length;i++){$(".subs").append(`<div class="card mt-md-4" style="width: 18rem;">
-                          <div class="card-body">
-                            <h5 class="card-title">SUBMITTED BY: ${data[i].name}</h5>
-                            <p style="font-size: 15px; font-weight: bold; font-family: Bahnschrift; color:gray();">URL: ${data[i].url}</p>
-                          </div>
-                        </div>`)}}
+                for(i=0;i<data.length;i++){$(".subs").append(`<div class="col-md-4"><div class="card text-white bg-success mb-3" style="max-width: 30rem;">
+  <div class="card-header thi">SUBMITTED BY: ${data[i].name}</div>
+  <div class="card-body">
+    <p class="card-text"><strong>LINK TO ASSIGNMENT:</strong> ${data[i].url}</p>
+  </div>
+</div></div>`)}}
             else{
-                $(".subs").append(`<h5>No Submissions</h5>`)
+                $(".subs").append(`<h3>No Submissions</h3>`)
             }
 
 
@@ -59,7 +64,7 @@
     $.get("/show_ass_from_db",function(data){
         for(i=0;i<data.length;i++){
         $("#assignmentlist_s").append(`
-        <button id="${data[i]}" class="btn btn-lg btn-success m-md-4 col-md-3" onclick="showsubs(id)">${data[i]}</button><br>`)
+        <button id="${data[i]}" class="btn btn-danger m-md-4 col-md-3 btnstyle xi" onclick="showsubs(id)">${data[i]}</button>`)
     }})
 
 </script>

@@ -40,7 +40,10 @@ submit.click(function(){
 
 function cb(x,y,z,o){
     graph.empty()
-    graph.append(`to be made`)
+    graph.append(`<div class="mid"><span><strong>A:</strong> ${x}%</span><br>
+                    <span><strong>B:</strong> ${y}%</span><br>
+                    <span><strong>C:</strong> ${z}%</span><br>
+                    <span><strong>D:</strong> ${o}%</span><br></div>`)
 }
 
 

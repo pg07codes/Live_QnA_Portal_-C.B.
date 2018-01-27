@@ -12,11 +12,11 @@ socket.on("question",function(data){
   <div class="card-body">
     <blockquote class="blockquote mb-0">
         <form>
-        <input type="radio" name="answer" class="answer" value="a"><span>${data.a}</span><br>
-        <input type="radio" name="answer" class="answer" value="b"><span>${data.b}</span><br>
-        <input type="radio" name="answer" class="answer" value="c"><span>${data.c}</span><br>
-        <input type="radio" name="answer" class="answer" value="d"><span>${data.d}</span><br>
-        <input type="button" class="btn btn-success mt-md-3" id="submitanswer" value="SUBMIT ANSWER" onclick="window.sbt()"><br>
+        <input type="radio" name="answer" class="answer" value="a"><span class="x">${data.a}</span><br>
+        <input type="radio" name="answer" class="answer" value="b"><span class="x">${data.b}</span><br>
+        <input type="radio" name="answer" class="answer" value="c"><span class="x">${data.c}</span><br>
+        <input type="radio" name="answer" class="answer" value="d"><span class="x">${data.d}</span><br>
+        <input type="button" class="btn btn-success mt-md-3 btnstyle" id="submitanswer" value="SUBMIT ANSWER" onclick="window.sbt()"><br>
         </form>
      </blockquote>
   </div>

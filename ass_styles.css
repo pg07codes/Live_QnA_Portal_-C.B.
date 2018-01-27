@@ -1,0 +1,33 @@
+.xi{
+    font-size: 25px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: gray();
+    text-shadow: black 1px 0 3px;
+    transition: font-size 1s;
+    padding:2px;
+}
+.xi:hover{
+    font-size: 32px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: lawngreen;
+    text-shadow: gray 1px 0 6px;
+    transition: font-size 0.5s;
+    overflow: hidden;
+}
+#assignmentlist_s{
+    width:1200px;
+    margin: 30px 95px;
+}
+.thi{
+    font-weight: lighter;
+    font-size: 20px;
+    transition: font-size 0.8s;
+}
+.thi:hover{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    transition: font-size 0.8s;
+}

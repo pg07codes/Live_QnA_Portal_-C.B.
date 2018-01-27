@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="ass_styles.css" rel="stylesheet">
     <script src="jquery-3.2.1.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>t_assignments</title>
@@ -12,15 +13,19 @@
 <div id="assignmentlist">
 
 </div>
-<div class="container">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
 <form class="form-group" method="post" action="/add_ass_into_db" id="newassignmentdetails">
-   <fieldset class="form-control">
-       <legend class=" form-control" style="font-size: 25px; font-weight: bold; font-family: Bahnschrift; color: gray()">ADD A NEW ASSIGNMENT HERE</legend>
+   <fieldset class="form-control" style="border: black solid 4px;">
+       <legend class=" form-control bg-success" style=" border: black solid 2px; font-size: 25px; font-weight: bold; font-family: Bahnschrift; color: gray()">ADD A NEW ASSIGNMENT HERE</legend>
     <div ><input type="text" class="form-control" id="name" name="name" placeholder="name of assignment" required></div>
-    <div class="col-md-4 m-md-3"><input class="btn btn-primary" type="submit" value="add" class="form-control" id="add"></div>
+    <div class="col-md-4 m-md-3"><input class="btn btn-dark" type="submit" value="add" class="form-control" id="add"></div>
    </fieldset>
 
 </form>
+        </div>
+    </div>
 </div>
 
 <div class="subs">
@@ -36,12 +41,12 @@
         $.get("/s/"+`${id}`,function(data){
             if(data.length){
                 console.log(data)
-                for(i=0;i<data.length;i++){$(".subs").append(`<div class="card mt-md-4" style="width: 18rem;">
-                          <div class="card-body">
-                            <h5 class="card-title">SUBMITTED BY: ${data[i].name}</h5>
-                            <p style="font-size: 15px; font-weight: bold; font-family: Bahnschrift; color:gray();">URL: ${data[i].url}</p>
-                          </div>
-                        </div>`)}}
+                for(i=0;i<data.length;i++){$(".subs").append(`<div class="col-md-4"><div class="card text-white bg-danger mb-3" style="width: 80rem;">
+  <div class="card-header thi">SUBMITTED BY: ${data[i].name}</div>
+  <div class="card-body">
+    <p class="card-text"><strong>LINK TO ASSIGNMENT:</strong> ${data[i].url}</p>
+  </div>
+</div></div>`)}}
             else{
                 $(".subs").append(`<h5>No Submissions</h5>`)
             }
@@ -52,7 +57,7 @@
     $.get("/show_ass_from_db",function(data){
         for(i=0;i<data.length;i++){
             $("#assignmentlist").append(`
-        <button id="${data[i]}" class="btn btn-lg btn-success m-md-4 col-md-3" onclick="showsubs(id)">${data[i]}</button><br>`)
+        <button id="${data[i]}" class="btn btn-dark m-md-4 col-md-3 btnstyle xi" onclick="showsubs(id)">${data[i]}</button>`)
         }})
 
 </script>

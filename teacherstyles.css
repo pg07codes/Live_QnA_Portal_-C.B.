@@ -1,0 +1,36 @@
+span{
+    font-family: Bahnschrift;
+    font-size: 35px;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    color: gray();
+    text-shadow: black 1px 0 6px;
+    transition: font-size 1s;
+    padding:5px;
+}
+span:hover{
+    font-size: 50px;
+    font-weight: bold;
+    color: royalblue;
+    text-shadow: gray 1px 0 8px;
+    transition: font-size 0.7s;
+}
+.mid{
+   width:700px;
+    margin:auto;
+    border: darkgreen solid 3px;
+    transition: border 0.8s;
+    padding:8px;
+}
+.mid:hover{
+    border: yellow dashed 5px ;
+    transition: border 0.8s;
+}
+.sty{
+    border: palevioletred solid 1px;
+    transition: border 0.5s;
+}
+.sty:hover{
+    border: black solid 7px;
+    transition: border 0.5s;
+}
