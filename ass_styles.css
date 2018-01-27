@@ -1,5 +1,5 @@
 .xi{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: lighter;
     letter-spacing: 1px;
     color: gray();
@@ -8,7 +8,7 @@
     padding:2px;
 }
 .xi:hover{
-    font-size: 32px;
+    font-size: 25px;
     letter-spacing: 3px;
     font-weight: bold;
     color: lawngreen;
