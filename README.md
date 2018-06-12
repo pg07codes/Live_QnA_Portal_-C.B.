@@ -2,6 +2,7 @@
 *this was built as a project by me @CodingBlocks*
 
 ## What is it?
+```
 -You can access the site as a teacher or a student
 -Teacher
   - can add/delete assignments for the students to work on
@@ -9,6 +10,7 @@
 -Students
   -can submit their assignments for the teacher to check
   -can answer to live questions asked by teacher in class
+```
 
 ## Technologies Used
   -Used nodejs for server
