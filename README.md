@@ -13,14 +13,15 @@
 ```
 
 ## Technologies Used
+```
   -Used nodejs for server
   -used mysql for DB and sequlize as an ORM
   -used socket.io for live question answers
   -used bootstrap for styling 
   -used jquery for AJAX and many real-time stuff
+```
 
-```
-this project does not uses the best practices to develop websites and was built by me as a beginner when i starting learning.
-As of now, it is closed and no pull requests will be accepted.
-```
+
+### this project does not uses the best practices to develop websites and was built by me as a beginner when i starting learning.
+### As of now, it is closed and no pull requests will be accepted.
   
